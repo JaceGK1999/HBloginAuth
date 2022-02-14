@@ -35,4 +35,7 @@ export async function redirectIfLoggedIn() {
     }
 }
 
-export async function logout() {}
+export async function logout() {
+    await client.auth.signOut();
+    location.replace('/');
+}
