@@ -9,7 +9,10 @@ export function getUser() {
     return client.auth.session() && client.auth.session().user;
 }
 
-export async function signupUser(email, password) {}
+export async function signupUser(email, password) {
+    const resp = await client.auth.signUp({ email, password });
+    console.log(resp);
+}
 
 export async function signInUser(email, password) {}
 
